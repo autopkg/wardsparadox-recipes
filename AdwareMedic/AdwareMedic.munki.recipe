@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads and Installs Adware Medic into Munki Repo</string>
     <key>Identifier</key>
-    <string>com.github.wardsparadox.adwaremedic</string>
+    <string>com.github.wardsparadox.adwaremedic.munki</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
