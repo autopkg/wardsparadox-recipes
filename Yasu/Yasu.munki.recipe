@@ -46,22 +46,6 @@
         <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%pathname%/%NAME%.zip</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>DMGCreator</string>
-            <key>Arguments</key>
-            <dict>
-              <key>dmg_root</key>
-              <string>%pathname%/downloads/</string>
-              <key>repo_subdirectory</key>
-              <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
         </dict>
         <dict>
             <key>Arguments</key>
