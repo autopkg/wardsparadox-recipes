@@ -14,6 +14,8 @@
         <string>Yasu</string>
         <key>DOWNLOAD_URL</key>
         <string>http://yasuapp.net/files/Yasu.zip</string>
+        <key>APP_DESTINATION</key>
+		    <string>/Applications/Utilities</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -28,8 +30,6 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>version</key>
-            <string>%version%</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
@@ -50,14 +50,14 @@
         <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Versioner</string>
             <key>Arguments</key>
             <dict>
-                <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app/Contents/Info.plist</string>
+                <key>archive_path</key>
+                <string>%pathname%</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>purge_destination</key>
+                <true/>
             </dict>
         </dict>
         <dict>
@@ -78,6 +78,11 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>additional_makepkginfo_options</key>
+				            <array>
+					          <string>--destinationpath</string>
+					          <string>%APP_DESTINATION%</string>
+				            </array>
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
