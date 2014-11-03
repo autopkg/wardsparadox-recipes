@@ -52,12 +52,16 @@
         <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
+            <key>Arguments</key>
+            <dict>
+                <key>archive_path</key>
+                <string>%pathname%/downloads/</string>
         </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%pathname%/Yasu.app</string>
+                <string>%pathname%/downloads/Yasu.app</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
