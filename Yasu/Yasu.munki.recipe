@@ -35,6 +35,8 @@
 				       <dict>
 					           <key>path</key>
 					           <string>/Applications/Yasu.app</string>
+                     <key>type</key>
+			               <string>application</string>
 				       </dict>
 			         </array>
 			      <key>items_to_copy</key>
