@@ -28,6 +28,8 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>version</key>
+            <string>%version%</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
@@ -76,8 +78,6 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>version_comparison_key</key>
-                <string>%version%</string>
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
