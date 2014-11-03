@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads and Installs Adware Medic into Munki Repo</string>
+    <string>Downloads and Installs Yasu into Munki Repo</string>
     <key>Identifier</key>
-    <string>com.github.wardsparadox.adwaremedic.munki</string>
+    <string>com.github.wardsparadox.yasu.munki</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -48,12 +48,28 @@
         <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
+            <key>Arguments</key>
+            <dict>
+                <key>archive_path</key>
+                <string>%pathname%/%NAME%.zip</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>DMGCreator</string>
+            <key>Arguments</key>
+            <dict>
+              <key>dmg_root</key>
+              <string>%pathname%/downloads/</string>
+              <key>repo_subdirectory</key>
+              <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
         </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%pathname%</string>
+                <string>%pathname%/downloads/%NAME%.app</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
