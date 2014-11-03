@@ -30,32 +30,6 @@
             <true/>
             <key>version</key>
             <string>%version%</string>
-          	<key>installs</key>
-			         <array>
-		               <dict>
-			                  <key>CFBundleIdentifier</key>
-			                  <string>net.yasuapp.yasu</string>
-			                  <key>CFBundleName</key>
-			                  <string>Yasu</string>
-			                  <key>CFBundleShortVersionString</key>
-			                  <string>%version%</string>
-			                  <key>path</key>
-			                  <string>/Applications/Yasu.app</string>
-			                  <key>type</key>
-			                  <string>application</string>
-			                  <key>version_comparison_key</key>
-			                  <string>CFBundleShortVersionString</string>
-		                </dict>
-	              </array>
-			      <key>items_to_copy</key>
-			         <array>
-				       <dict>
-					           <key>destination_path</key>
-					           <string>/Applications</string>
-					           <key>source_item</key>
-					           <string>Yasu.app</string>
-				       </dict>
-			         </array>
         </dict>
     </dict>
     <key>MinimumVersion</key>
