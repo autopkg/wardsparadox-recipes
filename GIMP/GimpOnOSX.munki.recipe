@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest GIMP for Mac OS X and imports into Munki Repo (uses hanson-m's GIMP Download Recipe)</string>
+    <key>Identifier</key>
+    <string>com.github.wardsparadox.munki.gimponosx</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>GIMP</string>
+        <key>MAJOR_OS_VERSION</key>
+        <string>Mavericks</string>
+        <key>SEARCH_URL</key>
+        <string>http://sourceforge.net/api/file/index/project-id/211713/mtime/desc/limit/20/rss</string>
+        <key>SEARCH_PATTERN</key>
+        <string>(?P&lt;url&gt;http.*?%MAJOR_OS_VERSION%.*?dmg)</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>applications</string>
+        <key>APP_DESTINATION</key>
+        <string>/Applications</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>GIMP is the GNU Image Manipulation Program. It is a freely distributed piece of software for such tasks as photo retouching, image composition and image authoring.</string>
+            <key>display_name</key>
+            <string>GIMP On OS X</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.gimponosx</string>
+    <key>Process</key>
+    <array>
+      <dict>
+        <key>Arguments</key>
+          <dict>
+            <key>pkg_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+            <key>repo_subdirectory</key>
+            <string>%MUNKI_REPO_SUBDIR%</string>
+            <key>additional_makepkginfo_options</key>
+            <array>
+            <string>--destinationpath</string>
+            <string>%APP_DESTINATION%</string>
+            </array>
+          </dict>
+        <key>Processor</key>
+          <string>MunkiImporter</string>
+      </dict>
+    </array>
+</dict>
+</plist>
