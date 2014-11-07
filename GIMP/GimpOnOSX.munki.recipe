@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest GIMP for Mac OS X and imports into Munki Repo (uses hanson-m's GIMP Download Recipe)</string>
     <key>Identifier</key>
-    <string>com.github.wardsparadox.munki.gimponosx</string>
+    <string>com.github.wardsparadox.gimponosx.munki</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
