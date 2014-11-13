@@ -31,7 +31,6 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>pkginfo</key>
             <key>version</key>
             <string>%version%</string>
         </dict>
