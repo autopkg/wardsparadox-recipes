@@ -31,8 +31,8 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>version</key>
-            <string>%version%</string>
+            <!--<key>version</key>
+            <string>%version%</string>-->
         </dict>
     </dict>
     <key>MinimumVersion</key>
