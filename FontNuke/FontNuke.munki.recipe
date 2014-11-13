@@ -31,6 +31,9 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>pkginfo</key>
+            <key>version</key>
+            <string>%version%</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
@@ -104,11 +107,6 @@
 					          <string>--destinationpath</string>
 					          <string>%APP_DESTINATION%</string>
 				            </array>
-                <key>pkginfo</key>
-                <dict>
-                    <key>version</key>
-                    <string>%version%</string>
-                </dict>
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
