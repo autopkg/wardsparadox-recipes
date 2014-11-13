@@ -26,7 +26,7 @@
             <key>description</key>
             <string>FontNuke is a free utility application for Mac OS X 10.4.x+ (Tiger, Leopard, Snow Leopard, Lion, Mountain Lion, Mavericks, Yosemite) that removes corrupt and troublesome font cache files.</string>
             <key>display_name</key>
-            <string>FontNuke</string>
+            <string>%NAME%</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
