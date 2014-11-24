@@ -31,8 +31,10 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <!--<key>version</key>
-            <string>%version%</string>-->
+            <key>category</key>
+            <string>Utilities</string>
+            <key>developer</key>
+            <string>Jake Pietrykowski</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
