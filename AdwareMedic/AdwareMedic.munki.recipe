@@ -14,7 +14,7 @@
         <string>AdwareMedic</string>
         <key>APPCAST_URL</key>
         <string>http://www.adwaremedic.com/versions/updates.xml</string>
-        <key>APP_DESTINIATION</key>
+        <key>APP_DESTINATION</key>
         <string>/Applications/Utilities</string>
         <key>pkginfo</key>
         <dict>
