@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-    <key>Description</key>
-    <string>Downloads the current release version of AirServer and Imports into Munki Repo (uses sheagcraig's AirServer Download Recipe)</string>
-    <key>Identifier</key>
-    <string>com.github.wardsparadox.airserver.munki</string>
-    <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>AirServer</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>applications</string>
-        <key>APP_DESTINATION</key>
-        <string>/Applications</string>
-        <key>pkginfo</key>
+        <key>Description</key>
+        <string>Downloads the current release version of AirServer and Imports into Munki Repo (uses sheagcraig's AirServer Download Recipe)</string>
+        <key>Identifier</key>
+        <string>com.github.wardsparadox.airserver.munki</string>
+        <key>Input</key>
         <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>AirServer is the most advanced AirPlay receiver for Mac and PC.
-              It allows you to receive AirPlay feeds, similar to an Apple TV.
-              &lt;br/&gt;&lt;img href=&quot;http://az414406.vo.msecnd.net/img2/education-small.png?v=2&quot;&gt;AirServer Image&lt;/img&gt;</string>
-            <key>display_name</key>
+            <key>NAME</key>
             <string>AirServer</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
+            <key>MUNKI_REPO_SUBDIR</key>
+            <string>applications</string>
+            <key>APP_DESTINATION</key>
+            <string>/Applications</string>
+            <key>pkginfo</key>
+            <dict>
+                <key>catalogs</key>
+                <array>
+                    <string>testing</string>
+                </array>
+                <key>description</key>
+                <string>AirServer is the most advanced AirPlay receiver for Mac and PC.
+                              It allows you to receive AirPlay feeds, similar to an Apple TV.
+                              &lt;br/&gt;&lt;img href="http://az414406.vo.msecnd.net/img2/education-small.png?v=2"&gt;AirServer Image&lt;/img&gt;</string>
+                <key>display_name</key>
+                <string>AirServer</string>
+                <key>name</key>
+                <string>%NAME%</string>
+                <key>unattended_install</key>
+                <true/>
+            </dict>
         </dict>
+        <key>MinimumVersion</key>
+        <string>0.2.9</string>
+        <key>ParentRecipe</key>
+        <string>com.github.sheagcraig.download.AirServer</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Arguments</key>
+                <dict>
+                    <key>pkg_path</key>
+                    <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                    <key>repo_subdirectory</key>
+                    <string>%MUNKI_REPO_SUBDIR%</string>
+                    <key>additional_makepkginfo_options</key>
+                    <array>
+                        <string>--destinationpath</string>
+                        <string>%APP_DESTINATION%</string>
+                    </array>
+                </dict>
+                <key>Processor</key>
+                <string>MunkiImporter</string>
+            </dict>
+        </array>
     </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.9</string>
-    <key>ParentRecipe</key>
-    <string>com.github.sheagcraig.download.AirServer</string>
-    <key>Process</key>
-    <array>
-      <dict>
-        <key>Arguments</key>
-          <dict>
-            <key>pkg_path</key>
-            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-            <key>repo_subdirectory</key>
-            <string>%MUNKI_REPO_SUBDIR%</string>
-            <key>additional_makepkginfo_options</key>
-            <array>
-            <string>--destinationpath</string>
-            <string>%APP_DESTINATION%</string>
-            </array>
-          </dict>
-        <key>Processor</key>
-          <string>MunkiImporter</string>
-      </dict>
-    </array>
-</dict>
 </plist>
