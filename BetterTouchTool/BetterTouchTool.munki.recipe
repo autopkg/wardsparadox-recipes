@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and Installs BetterTouchTool into Munki Repo</string>
+    <key>Identifier</key>
+    <string>com.github.wardsparadox.bttl.munki</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>utilities</string>
+        <key>NAME</key>
+        <string>bettertouchtool</string>
+        <key>APPCAST_URL</key>
+        <string>http://appcast.boastr.net/</string>
+        <key>APP_DESTINATION</key>
+        <string>/Applications</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>BetterTouchTool is a great, feature packed FREE app that allows you to configure many gestures for your Magic Mouse, Macbook Trackpad and Magic Trackpad. It also allows you to configure actions for keyboard shortcuts, normal mice and the Apple Remote. In addition to this it has an iOS companion App (BTT Remote) which can also be configured to control your Mac the way you want.</string>
+            <key>display_name</key>
+            <string>Better Touch Tool</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>category</key>
+            <string>Utilities</string>
+            <key>developer</key>
+            <string>Atndreas Hegenberg</string>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.3</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>SparkleUpdateInfoProvider</string>
+            <key>Arguments</key>
+            <dict>
+                <key>appcast_url</key>
+                <string>%APPCAST_URL%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%url%</string>
+                <key>filename</key>
+                <string>%NAME%.zip</string>
+            </dict>
+        </dict>
+        <dict>
+          <key>Processor</key>
+          <string>Unarchiver</string>
+          <key>Arguments</key>
+          <dict>
+            <key>archive_path</key>
+            <string>%pathname%</string>
+            <key>archive_format</key>
+            <string>zip</string>
+            <key>destination_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+            <key>purge_destination</key>
+            <true/>
+          </dict>
+        </dict>
+        <dict>
+          <key>Arguments</key>
+          <dict>
+            <key>dmg_root</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%/</string>
+            <key>dmg_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+          </dict>
+          <key>Processor</key>
+          <string>DmgCreator</string>
+        </dict>
+        <dict>
+          <key>Arguments</key>
+          <dict>
+            <key>pkg_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+            <key>repo_subdirectory</key>
+            <string>%MUNKI_REPO_SUBDIR%</string>
+            <key>additional_makepkginfo_options</key>
+            <array>
+              <string>--destinationpath</string>
+              <string>%APP_DESTINATION%</string>
+            </array>
+          </dict>
+          <key>Processor</key>
+          <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
