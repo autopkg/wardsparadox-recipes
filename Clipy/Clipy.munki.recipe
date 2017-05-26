@@ -25,6 +25,10 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>catagory</key>
+            <string>Utilities</string>
+            <key>developer</key>
+            <string>Clipy Project</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
