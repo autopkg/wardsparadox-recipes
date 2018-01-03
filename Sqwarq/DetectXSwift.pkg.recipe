@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of DetectX Swift and creates a package.</string>
+	<string>Downloads the latest version of DetectXSwift and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.autopkg.wardsparadox.pkg.DetectXSwift</string>
 	<key>Input</key>
@@ -13,7 +13,7 @@
 		<key>BUNDLE_ID</key>
 		<string>com.sqwarq.DetectX-Swift</string>
 		<key>NAME</key>
-		<string>DetectX Swift</string>
+		<string>DetectXSwift</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/DetectX Swift.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/DetectXSwift.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

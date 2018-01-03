@@ -5,13 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of DetectX Swift.</string>
+	<string>Downloads the latest version of DetectXSwift.</string>
 	<key>Identifier</key>
 	<string>com.github.autopkg.wardsparadox.download.DetectXSwift</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>DetectX Swift</string>
+		<string>DetectXSwift</string>
 		<key>SPARKLE_FEED_URL</key>
 		<string>https://s3.amazonaws.com/sqwarq.com/AppCasts/dtxswift.xml</string>
 	</dict>
@@ -58,7 +58,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/DetectX Swift.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/DetectXSwift.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.sqwarq.DetectX-Swift" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = MAJ5XBJSG3)</string>
 			</dict>
