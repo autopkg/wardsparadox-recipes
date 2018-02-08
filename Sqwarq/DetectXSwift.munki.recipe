@@ -45,7 +45,7 @@
           <key>dmg_path</key>
           <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
           <key>dmg_root</key>
-          <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+          <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Utilities</string>
         </dict>
         <key>Processor</key>
         <string>DmgCreator</string>
@@ -54,7 +54,7 @@
         <key>Arguments</key>
         <dict>
           <key>faux_root</key>
-          <string>%RECIPE_CACHE_DIR%/DetectXSwift</string>
+          <string>%RECIPE_CACHE_DIR%/%NAME%</string>
           <key>installs_item_paths</key>
           <array>
             <string>/Applications/Utilities/DetectX Swift.app</string>
