@@ -53,6 +53,8 @@
       <dict>
         <key>Arguments</key>
         <dict>
+          <key>faux_root</key>
+          <string>%RECIPE_CACHE_DIR%/DetectXSwift</string>
           <key>installs_item_paths</key>
           <array>
             <string>/Applications/Utilities/DetectX Swift.app</string>
