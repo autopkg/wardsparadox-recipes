@@ -1,72 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+  <dict>
     <key>Description</key>
     <string>Downloads the current release of Google Drive FS.</string>
     <key>Identifier</key>
     <string>com.github.wardsparadox.download.googledrivefs</string>
     <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>googledrivefilestream</string>
+      <key>NAME</key>
+      <string>googledrivefilestream</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
     <key>Process</key>
     <array>
+      <dict>
+        <key>Processor</key>
+        <string>DriveFSURLProvider</string>
+      </dict>
+      <dict>
+        <key>Processor</key>
+        <string>URLDownloader</string>
+        <key>Arguments</key>
         <dict>
-          <key>Processor</key>
-          <string>DriveFSURLProvider</string>
+          <key>filename</key>
+          <string>%NAME%.dmg</string>
         </dict>
+      </dict>
+      <dict>
+        <key>Processor</key>
+        <string>EndOfCheckPhase</string>
+      </dict>
+      <dict>
         <dict>
+          <key>Arguments</key>
+          <dict>
+            <key>input_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg/Google*.pkg</string>
+            <key>expected_authority_names</key>
+            <array>
+              <string>Developer ID Installer: Google, Inc. (EQHXZ8M8AV)</string>
+              <string>Developer ID Certification Authority</string>
+              <string>Apple Root CA</string>
+            </array>
             <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
+            <string>CodeSignatureVerifier</string>
+          </dict>
         </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/</string>
-				<key>flat_pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%filename%/GoogleDriveFileStream.pkg</string>
-				<key>purge_destination</key>
-				<string>true</string>
-			</dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/GoogleDriveFileStream.pkg/Payload</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/Applications/Google Drive File Stream.app</string>
-				<key>requirement</key>
-				<string>identifier "com.google.drivefs" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = EQHXZ8M8AV</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
+      </dict>
     </array>
-</dict>
+  </dict>
 </plist>
