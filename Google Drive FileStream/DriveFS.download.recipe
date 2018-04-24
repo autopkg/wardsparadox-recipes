@@ -32,7 +32,6 @@
         <key>Processor</key>
         <string>EndOfCheckPhase</string>
       </dict>
-      <dict>
         <dict>
           <key>Arguments</key>
           <dict>
@@ -48,7 +47,6 @@
             <string>CodeSignatureVerifier</string>
           </dict>
         </dict>
-      </dict>
     </array>
   </dict>
 </plist>
