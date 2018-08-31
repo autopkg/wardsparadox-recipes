@@ -65,7 +65,7 @@
             <key>unattended_install</key>
             <true/>
             <key>developer</key>
-            <string>Vernier Software & Technology, LLC.</string>
+            <string>Vernier Software &amp; Technology, LLC.</string>
             <key>category</key>
             <string>Sciencific Analysis</string>
         </dict>
