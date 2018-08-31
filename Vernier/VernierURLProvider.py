@@ -4,7 +4,6 @@
 Vernier Software YML to URL Provider
 """
 
-import yaml
 import urllib2
 import urlparse
 
@@ -36,13 +35,13 @@ class VernierURLProvider(Processor):
         url = "http://software-releases.graphicalanalysis.com/{0}/mac/release/release-mac.yml".format(apptype)
         req = urllib2.Request(url, headers=header)
         file = urllib2.urlopen(req)
-        yamlfile = yaml.load(file)
-        dmgpath = yamlfile["path"].rsplit(".", 1)[0] + ".dmg"
+        data = file.read().split()
+        dmgpath = data[data.index("path:")+1].rsplit(".", 1)[0] + ".dmg"
         fileurl = urlparse.urljoin(url, dmgpath)
         self.output("DMG URL is {}".format(fileurl))
         self.env["url"] = fileurl
-        self.output("Version is {}".format(yamlfile["version"]))
-        self.env["version"] = yamlfile["version"]
+        self.output("Version is {}".format(data[data.index("version:")+1]))
+        self.env["version"] = data[data.index("version:")+1]
 
 
 if __name__ == "__main__":
