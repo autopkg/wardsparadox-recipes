@@ -11,10 +11,11 @@ from autopkglib import Processor, ProcessorError
 
 __all__ = "VernierURLProvider"
 
+
 class VernierURLProvider(Processor):
     description = "Converts Vernier yaml release to a URL"
     input_variables = {
-        "apptype" : {
+        "apptype": {
             "required": True,
             "description": "Determins which app to download the yml to convert to a release url. Use ga for Graphical Analysis and sa for Spectral Analysis"
             }
