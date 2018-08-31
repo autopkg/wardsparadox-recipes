@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>applications</string>
         <key>NAME</key>
-        <string>googledrivefilestream</string>
+        <string>verniergraphicalanalysis</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
