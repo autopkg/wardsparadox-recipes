@@ -31,6 +31,15 @@
         <string>%NAME%</string>
         <key>unattended_install</key>
         <true/>
+        	<key>items_to_copy</key>
+	      <array>
+		    <dict>
+			    <key>destination_path</key>
+			    <string>/Applications/Utilities</string>
+			    <key>source_item</key>
+			    <string>DetectX Swift.app</string>
+		    </dict>
+	    </array>
       </dict>
     </dict>
     <key>MinimumVersion</key>
