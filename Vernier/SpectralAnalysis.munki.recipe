@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and Vernier Spectral Analysis into Munki Repo</string>
+    <key>Identifier</key>
+    <string>com.github.wardsparadox.munki.vernier.spectralanalysis</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>applications/vernier</string>
+        <key>NAME</key>
+        <string>vernierspectralanalysis</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>&lt;h1&gt;Vernier Spectral Analysis is a tool for science students to collect and analyze data from Vernier spectrophotometers.&lt;/h1&gt;
+
+
+&lt;p&gt;
+The Spectral Analysis app makes it easy to incorporate spectroscopy into your biology and chemistry labs. Using the app, students can collect a full spectrum and explore topics such as Beer's law, enzyme kinetics, and plant pigments.
+&lt;/p&gt;
+&lt;p&gt;
+The user-friendly interface walks the students through the data-collection process and includes analysis features such as curve fitting and data interpolation.
+&lt;/p&gt;
+&lt;h2&gt;Key Features&lt;/h2&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Follow on-screen instructions for simplified Beer's law or kinetics data collection.
+&lt;li&gt;Collect full spectrum absorbance or % transmittance data in less than one second.
+&lt;li&gt;Analyze data with built-in analysis tools, including data interpolation and curve fittings.
+&lt;li&gt;Determine the order of kinetics reaction with the calculated columns function.
+&lt;li&gt;Understand color transmission using the color strip shown on full spectrum graphs.
+&lt;li&gt;View the full spectrum of your sample simultaneously with Beer's law or kinetic data collection.&lt;/li&gt;&lt;/ul&gt;</string>
+            <key>display_name</key>
+            <string>Vernier Spectral Analysis</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>developer</key>
+            <string>Vernier Software &amp; Technology, LLC.</string>
+            <key>category</key>
+            <string>Sciencific Analysis</string>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.3</string>
+    <key>ParentRecipe</key>
+    <string>com.github.wardsparadox.download.vernier.spectralanalysis</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
