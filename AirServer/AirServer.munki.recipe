@@ -30,6 +30,8 @@
                 <string>%NAME%</string>
                 <key>unattended_install</key>
                 <true/>
+                <key>uninstall_method</key>
+                <string>/Applications/AirServer.app/Contents/Resources/uninstall</string>
             </dict>
         </dict>
         <key>MinimumVersion</key>
