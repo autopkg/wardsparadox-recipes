@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Utilities/DetectX Swift.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%%DESTINATION_PATH%/DetectX Swift.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

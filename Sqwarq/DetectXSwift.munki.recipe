@@ -14,6 +14,8 @@
       <string>apps/%NAME%</string>
       <key>NAME</key>
       <string>DetectXSwift</string>
+      <key>DESTINATION_PATH</key>
+      <string>/Applications/Utilities</string>
       <key>pkginfo</key>
       <dict>
         <key>catalogs</key>
@@ -35,7 +37,7 @@
 	      <array>
 		    <dict>
 			    <key>destination_path</key>
-			    <string>/Applications/Utilities</string>
+			    <string>%DESTINATION_PATH%</string>
 			    <key>source_item</key>
 			    <string>DetectX Swift.app</string>
 		    </dict>
@@ -51,26 +53,26 @@
       <dict>
         <key>Arguments</key>
         <dict>
-          <key>dmg_path</key>
-          <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-          <key>dmg_root</key>
-          <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Utilities</string>
-        </dict>
-        <key>Processor</key>
-        <string>DmgCreator</string>
-      </dict>
-      <dict>
-        <key>Arguments</key>
-        <dict>
           <key>faux_root</key>
           <string>%RECIPE_CACHE_DIR%/%NAME%</string>
           <key>installs_item_paths</key>
           <array>
-            <string>/Applications/Utilities/DetectX Swift.app</string>
+            <string>%DESTINATION_PATH%/DetectX Swift.app</string>
           </array>
         </dict>
         <key>Processor</key>
         <string>MunkiInstallsItemsCreator</string>
+      </dict>
+      <dict>
+        <key>Arguments</key>
+        <dict>
+          <key>dmg_path</key>
+          <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+          <key>dmg_root</key>
+          <string>%RECIPE_CACHE_DIR%/%NAME%%DESTINATION_PATH%</string>
+        </dict>
+        <key>Processor</key>
+        <string>DmgCreator</string>
       </dict>
       <dict>
         <key>Processor</key>
