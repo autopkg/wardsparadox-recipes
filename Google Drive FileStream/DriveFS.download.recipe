@@ -10,6 +10,8 @@
     <dict>
       <key>NAME</key>
       <string>googledrivefilestream</string>
+      <key>URL</key>
+      <string>https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
@@ -17,15 +19,13 @@
     <array>
       <dict>
         <key>Processor</key>
-        <string>DriveFSURLProvider</string>
-      </dict>
-      <dict>
-        <key>Processor</key>
         <string>URLDownloader</string>
         <key>Arguments</key>
         <dict>
           <key>filename</key>
           <string>%NAME%.dmg</string>
+          <key>url</key>
+          <string>%URL%</string>
         </dict>
       </dict>
       <dict>
