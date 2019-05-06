@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Very specific fork for Office 2019 Suite.
+
+Downloads the latest Microsoft Office 2019 SKU-less installer package.
+
+Set the REGION key to:
+
+525133 for Office 365 and Americas Volume LATEST (default)
+871743 for Office 2016
+
+Due to the Downloads using Microsoft's Global CDN's the region code is now for type of installer
+
+Set the INSTALLERTYPE key to (this is for version only!):
+
+o365 for Office 365 (default)
+vl2019 for Office 2019
+vl2016 for Office 2016
+		</string>
+		<key>Identifier</key>
+		<string>com.github.wardsparadox.Office2019SuiteSKUless-additionalpkginfo.munki</string>
+		<key>ParentRecipe</key>
+		<string>com.github.autopkg.office-recipes.download.Office2019Suite</string>
+		<key>Input</key>
+		<dict>
+			<key>installs_item_paths</key>
+			<array>
+				<string>/Applications/Microsoft OneNote.app</string>
+				<string>/Applications/Microsoft Excel.app</string>
+				<string>/Applications/Microsoft PowerPoint.app</string>
+				<string>/Applications/Microsoft Word.app</string>
+			</array>
+			<key>version_comparison_key</key>
+			<string>CFBundleShortVersionString</string>
+			<key>pkg_ids_set_optional_true</key>
+			<array>
+				<string>com.microsoft.package.Microsoft_Outlook.app</string>
+				<string>com.microsoft.OneDrive</string>
+				<string>com.microsoft.package.Microsoft_AutoUpdate.app</string>
+			</array>
+			<key>NAME</key>
+			<string>Office2019Suite</string>
+			<key>REGION</key>
+			<string>525133</string>
+			<key>INSTALLERTYPE</key>
+			<string>o365</string>
+			<key>DOWNLOAD_URL_BASE</key>
+			<string>https://go.microsoft.com/fwlink/?linkid=</string>
+			<key>MUNKI_REPO_SUBDIR</key>
+			<string>apps/Office2019</string>
+			<key>pkginfo</key>
+			<dict>
+				<key>blocking_applications</key>
+				<array>
+					<string>Microsoft AutoUpdate</string>
+					<string>Microsoft Outlook</string>
+					<string>Microsoft Excel</string>
+					<string>Microsoft PowerPoint</string>
+					<string>Microsoft Word</string>
+					<string>Microsoft OneNote</string>
+				</array>
+				<key>catalogs</key>
+				<array>
+					<string>testing</string>
+				</array>
+				<key>category</key>
+				<string>Productivity</string>
+				<key>description</key>
+				<string>Get more done. Office 2019 for Mac has the classic Office apps you know, including Word, Excel, PowerPoint, and OneNote. Create professional looking documents and presentations, organize your notes, or create and share digital notebooks with your friends and family.</string>
+				<key>developer</key>
+				<string>Microsoft</string>
+				<key>display_name</key>
+				<string>Microsoft Office 2019</string>
+				<key>installer_choices_xml</key>
+				<array>
+					<dict>
+						<key>attributeSetting</key>
+						<integer>0</integer>
+						<key>choiceAttribute</key>
+						<string>selected</string>
+						<key>choiceIdentifier</key>
+						<string>com.microsoft.autoupdate</string>
+					</dict>
+					<dict>
+						<key>attributeSetting</key>
+						<integer>0</integer>
+						<key>choiceAttribute</key>
+						<string>selected</string>
+						<key>choiceIdentifier</key>
+						<string>com.microsoft.outlook</string>
+					</dict>
+					<dict>
+						<key>attributeSetting</key>
+						<integer>0</integer>
+						<key>choiceAttribute</key>
+						<string>selected</string>
+						<key>choiceIdentifier</key>
+						<string>com.microsoft.onedrive</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>0.4.1</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Processor</key>
+				<string>MunkiInstallsItemsCreator</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>MunkiPkginfoMerger</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pkg_path</key>
+					<string>%pathname%</string>
+					<key>repo_subdirectory</key>
+					<string>%MUNKI_REPO_SUBDIR%</string>
+				</dict>
+				<key>Processor</key>
+				<string>MunkiImporter</string>
+
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>com.github.keeleysam.recipes.GoogleTalkPlugin/MunkiPkginfoReceiptsEditor</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
