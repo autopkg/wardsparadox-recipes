@@ -3,22 +3,23 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Very specific fork for Office 2019 Suite.
+		<string>
+			Very specific fork for Office 2019 Suite.
 
-Downloads the latest Microsoft Office 2019 SKU-less installer package.
+			Downloads the latest Microsoft Office 2019 SKU-less installer package.
 
-Set the REGION key to:
+			Set the REGION key to:
 
-525133 for Office 365 and Americas Volume LATEST (default)
-871743 for Office 2016
+			525133 for Office 365 and Americas Volume LATEST (default)
+			871743 for Office 2016
 
-Due to the Downloads using Microsoft's Global CDN's the region code is now for type of installer
+			Due to the Downloads using Microsoft's Global CDN's the region code is now for type of installer
 
-Set the INSTALLERTYPE key to (this is for version only!):
+			Set the INSTALLERTYPE key to (this is for version only!):
 
-o365 for Office 365 (default)
-vl2019 for Office 2019
-vl2016 for Office 2016
+			o365 for Office 365 (default)
+			vl2019 for Office 2019
+			vl2016 for Office 2016
 		</string>
 		<key>Identifier</key>
 		<string>com.github.wardsparadox.Office2019SuiteSKUless-additionalpkginfo.munki</string>
@@ -26,15 +27,6 @@ vl2016 for Office 2016
 		<string>com.github.autopkg.office-recipes.download.Office2019Suite</string>
 		<key>Input</key>
 		<dict>
-			<key>installs_item_paths</key>
-			<array>
-				<string>/Applications/Microsoft OneNote.app</string>
-				<string>/Applications/Microsoft Excel.app</string>
-				<string>/Applications/Microsoft PowerPoint.app</string>
-				<string>/Applications/Microsoft Word.app</string>
-			</array>
-			<key>version_comparison_key</key>
-			<string>CFBundleShortVersionString</string>
 			<key>pkg_ids_set_optional_true</key>
 			<array>
 				<string>com.microsoft.package.Microsoft_Outlook.app</string>
@@ -109,7 +101,42 @@ vl2016 for Office 2016
 		<array>
 			<dict>
 				<key>Processor</key>
+				<string>FlatPkgUnpacker</string>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<key>flat_pkg_path</key>
+					<string>%pathname%</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>PkgPayloadUnpacker</string>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot/word/Applications</string>
+					<key>pkg_payload_path</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot/Microsoft_Word_Internal.pkg/Payload</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
 				<string>MunkiInstallsItemsCreator</string>
+				<key>Arguments</key>
+				<dict>
+					<key>installs_item_paths</key>
+					<array>
+						<string>/Applications/Microsoft Word.app</string>
+					</array>
+					<key>faux_root</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot/word/</string>
+				</dict>
 			</dict>
 			<dict>
 				<key>Processor</key>
@@ -125,7 +152,6 @@ vl2016 for Office 2016
 				</dict>
 				<key>Processor</key>
 				<string>MunkiImporter</string>
-
 			</dict>
 			<dict>
 				<key>Processor</key>
