@@ -53,6 +53,7 @@
 					<string>Microsoft PowerPoint</string>
 					<string>Microsoft Word</string>
 					<string>Microsoft OneNote</string>
+					<string>Microsoft AutoUpdate.app/Contents/MacOS/Microsoft AutoUpdate</string>
 				</array>
 				<key>catalogs</key>
 				<array>
