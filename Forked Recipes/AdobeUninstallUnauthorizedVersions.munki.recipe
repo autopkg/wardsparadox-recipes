@@ -23,7 +23,7 @@
                     <key>category</key>
                     <string>Uninstallers</string>
                     <key>description</key>
-                    <string>%Description%</string>
+                    <string>A package of the Adobe Unauthorized Versions Uninstaller tool that will remove all Unauthorized Versions per Adobe.</string>
                     <key>developer</key>
                     <string>Adobe</string>
                     <key>display_name</key>
