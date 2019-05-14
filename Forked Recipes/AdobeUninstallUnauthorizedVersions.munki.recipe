@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>AdobeUninstallUnauthorizedVersions</string>
             <key>MUNKI_REPO_SUBDIR</key>
-            <string>apps/Office2019</string>
+            <string>apps/Adobe</string>
             <key>pkginfo</key>
             <dict>
                 <key>pkginfo</key>
@@ -23,7 +23,7 @@
                     <key>category</key>
                     <string>Uninstallers</string>
                     <key>description</key>
-                    <string/>
+                    <string>%Description%</string>
                     <key>developer</key>
                     <string>Adobe</string>
                     <key>display_name</key>
@@ -32,22 +32,22 @@
                     <string>%NAME%</string>
                 </dict>
             </dict>
-            <key>MinimumVersion</key>
-            <string>0.5.0</string>
-            <key>ParentRecipe</key>
-            <string>com.github.neilmartin83.pkg.AdobeUninstallUnauthorizedVersions</string>
-            <key>Process</key>
-            <array>
-                <dict>
-                    <key>Arguments</key>
-                    <dict>
-                        <key>repo_subdirectory</key>
-                        <string>%MUNKI_REPO_SUBDIR%</string>
-                    </dict>
-                    <key>Processor</key>
-                    <string>MunkiImporter</string>
-                </dict>
-            </array>
         </dict>
+        <key>MinimumVersion</key>
+        <string>0.4.1</string>
+        <key>ParentRecipe</key>
+        <string>com.github.neilmartin83.pkg.AdobeUninstallUnauthorizedVersions</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Arguments</key>
+                <dict>
+                    <key>repo_subdirectory</key>
+                    <string>%MUNKI_REPO_SUBDIR%</string>
+                </dict>
+                <key>Processor</key>
+                <string>MunkiImporter</string>
+            </dict>
+        </array>
     </dict>
 </plist>
