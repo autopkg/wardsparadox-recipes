@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Clipy and drag-drop installs it.</string>
+	<key>Identifier</key>
+	<string>com.github.wardsparadox.install.Clipy</string>
+	<key>Input</key>
+	<dict>
+		<key>BUNDLE_ID</key>
+		<string>com.clipy-app.Clipy</string>
+		<key>NAME</key>
+		<string>Clipy</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.wardsparadox.download.Clipy</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Clipy.app</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>InstallFromDMG</string>
+		</dict>
+	</array>
+</dict>
+</plist>
