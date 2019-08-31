@@ -5,6 +5,7 @@ From https://gist.github.com/opragel/681fbf91f2d2aba548bac83049bd891b#file-googl
 by Owen Pragel
 """
 
+from __future__ import absolute_import
 import xml.etree.ElementTree as ET
 import uuid
 import urllib2
