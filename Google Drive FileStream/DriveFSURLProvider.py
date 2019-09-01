@@ -6,12 +6,17 @@ by Owen Pragel
 """
 
 from __future__ import absolute_import
-import xml.etree.ElementTree as ET
-import uuid
+
 import urllib2
-import urllib
+import uuid
+import xml.etree.ElementTree as ET
 
 from autopkglib import Processor, ProcessorError
+
+try:
+    from urllib import request as urllib  # For Python 3
+except ImportError:
+    import urllib  # For Python 2
 
 __all__ = "DriveFSURLProvider"
 
