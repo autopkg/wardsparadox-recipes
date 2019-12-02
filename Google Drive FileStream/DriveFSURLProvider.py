@@ -5,12 +5,18 @@ From https://gist.github.com/opragel/681fbf91f2d2aba548bac83049bd891b#file-googl
 by Owen Pragel
 """
 
-import xml.etree.ElementTree as ET
-import uuid
+from __future__ import absolute_import
+
 import urllib2
-import urllib
+import uuid
+import xml.etree.ElementTree as ET
 
 from autopkglib import Processor, ProcessorError
+
+try:
+    from urllib.parse import urlencode  # For Python 3
+except ImportError:
+    from urllib import urlencode  # For Python 2
 
 __all__ = "DriveFSURLProvider"
 
@@ -42,7 +48,7 @@ class DriveFSURLProvider(Processor):
         </request>
         """ % (str(uuid.uuid1()), platform, os_version)
 
-        url_params = urllib.urlencode(params)
+        url_params = urlencode(params)
         url = urllib2.Request('https://tools.google.com/service/update2', data=url_params)
         url.add_header('Content-Type', 'application/xml')
         output_url = urllib2.urlopen(url, xml)

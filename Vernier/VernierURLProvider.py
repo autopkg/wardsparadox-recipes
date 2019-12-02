@@ -4,6 +4,8 @@
 Vernier Software YML to URL Provider
 """
 
+from __future__ import absolute_import
+
 import urllib2
 import urlparse
 
