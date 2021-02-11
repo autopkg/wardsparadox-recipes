@@ -37,6 +37,7 @@
             <key>blocking_applications</key>
             <array>
               <string>Google Drive File Stream</string>
+              <string>Google Drive</string>
             </array>
             <key>installer_choices_xml</key>
           	<array>
