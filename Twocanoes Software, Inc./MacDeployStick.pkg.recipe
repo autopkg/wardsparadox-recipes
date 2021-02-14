@@ -10,8 +10,6 @@
 	<string>com.github.autopkg.wardsparadox.pkg.MacDeployStick</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.twocanoes.MacDeployStick</string>
 		<key>NAME</key>
 		<string>MacDeployStick</string>
 	</dict>

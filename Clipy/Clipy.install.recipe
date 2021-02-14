@@ -8,8 +8,6 @@
 	<string>com.github.wardsparadox.install.Clipy</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.clipy-app.Clipy</string>
 		<key>NAME</key>
 		<string>Clipy</string>
 	</dict>
