@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and imports the Google Drive installer into the Munki Repo</string>
+    <key>Identifier</key>
+    <string>com.github.wardsparadox.munki.googledrive</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/%NAME%</string>
+        <key>NAME</key>
+        <string>GoogleDrive</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>blocking_applications</key>
+            <array>
+              <string>Google Drive File Stream</string>
+              <string>Google Drive</string>
+            </array>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>category</key>
+            <string>File Sharing</string>
+            <key>developer</key>
+            <string>Google</string>
+            <key>description</key>
+            <string>Drive for desktop lets you:
+• Access, search and manage files on-demand from your computer in seconds.
+• Get just the files you need and make certain files available for offline use later.
+• Access your work even quicker, as your most-used files become available in the background intelligently.
+• Avoid the risk of users downloading all of your company data to their hard drives.</string>
+            <key>display_name</key>
+            <string>Google Drive</string>
+			<key>icon</key>
+			<string>GoogleDrive.png</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>installer_choices_xml</key>
+          	<array>
+          		<dict>
+          			<key>attributeSetting</key>
+          			<integer>0</integer>
+          			<key>choiceAttribute</key>
+          			<string>selected</string>
+          			<key>choiceIdentifier</key>
+          			<string>com.google.pkg.Keystone</string>
+          		</dict>
+          	</array>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.3</string>
+    <key>ParentRecipe</key>
+    <string>com.github.wardsparadox.download.googledrive</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
