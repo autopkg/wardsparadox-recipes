@@ -10,8 +10,6 @@
 	<string>com.github.autopkg.wardsparadox.pkg.MasterKey</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.macinmind.masterkey</string>
 		<key>NAME</key>
 		<string>Master Key</string>
 	</dict>

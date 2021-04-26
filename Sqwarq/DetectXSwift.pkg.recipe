@@ -10,8 +10,6 @@
 	<string>com.github.autopkg.wardsparadox.pkg.DetectXSwift</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.sqwarq.DetectX-Swift</string>
 		<key>NAME</key>
 		<string>DetectXSwift</string>
 	</dict>

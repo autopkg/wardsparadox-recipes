@@ -10,8 +10,6 @@
 	<string>com.github.autopkg.wardsparadox.pkg.AppleJuice</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>io.raphaelhanneken.applejuice</string>
 		<key>NAME</key>
 		<string>Apple Juice</string>
 	</dict>
