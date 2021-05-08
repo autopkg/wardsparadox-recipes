@@ -37,7 +37,7 @@
         <key>MinimumVersion</key>
         <string>0.2.9</string>
         <key>ParentRecipe</key>
-        <string>com.github.sheagcraig.download.AirServer</string>
+        <string>com.github.homebysix.download.AirServer</string>
         <key>Process</key>
         <array>
             <dict>
