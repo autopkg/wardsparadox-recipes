@@ -14,38 +14,21 @@
       <string>https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.5.0</string>
+    <string>1.1</string>
     <key>Process</key>
     <array>
       <dict>
         <key>Processor</key>
-        <string>URLDownloader</string>
+        <string>DeprecationWarning</string>
         <key>Arguments</key>
         <dict>
-          <key>filename</key>
-          <string>%NAME%.dmg</string>
-          <key>url</key>
-          <string>%URL%</string>
+          <key>warning_message</key>
+          <string>Recipe Retired! Use nstrauss-recipes/GoogleDrive.download instead and update parent recipe to com.github.nstrauss.pkg.GoogleDrive</string>
         </dict>
       </dict>
       <dict>
         <key>Processor</key>
         <string>EndOfCheckPhase</string>
-      </dict>
-      <dict>
-        <key>Processor</key>
-        <string>CodeSignatureVerifier</string>
-        <key>Arguments</key>
-        <dict>
-          <key>input_path</key>
-          <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Google*.*pkg</string>
-          <key>expected_authority_names</key>
-          <array>
-            <string>Developer ID Installer: Google LLC (EQHXZ8M8AV)</string>
-            <string>Developer ID Certification Authority</string>
-            <string>Apple Root CA</string>
-          </array>
-        </dict>
       </dict>
     </array>
   </dict>
