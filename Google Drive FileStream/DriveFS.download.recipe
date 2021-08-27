@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>Description</key>
-    <string>Downloads the current release of Google Drive FS.</string>
-    <key>Identifier</key>
-    <string>com.github.wardsparadox.download.googledrivefs</string>
-    <key>Input</key>
     <dict>
-      <key>NAME</key>
-      <string>googledrivefilestream</string>
-      <key>URL</key>
-      <string>https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg</string>
+        <key>Description</key>
+        <string>Downloads the current release of Google Drive FS.</string>
+        <key>Identifier</key>
+        <string>com.github.wardsparadox.download.googledrivefs</string>
+        <key>MinimumVersion</key>
+        <string>1.1</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Processor</key>
+                <string>DeprecationWarning</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>warning_message</key>
+                    <string>Recipe Retired! Use nstrauss-recipes/GoogleDrive.download instead and update parent recipe to com.github.nstrauss.pkg.GoogleDrive</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>EndOfCheckPhase</string>
+            </dict>
+        </array>
     </dict>
-    <key>MinimumVersion</key>
-    <string>1.1</string>
-    <key>Process</key>
-    <array>
-      <dict>
-        <key>Processor</key>
-        <string>DeprecationWarning</string>
-        <key>Arguments</key>
-        <dict>
-          <key>warning_message</key>
-          <string>Recipe Retired! Use nstrauss-recipes/GoogleDrive.download instead and update parent recipe to com.github.nstrauss.pkg.GoogleDrive</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>Processor</key>
-        <string>EndOfCheckPhase</string>
-      </dict>
-    </array>
-  </dict>
 </plist>
