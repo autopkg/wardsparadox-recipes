@@ -10,6 +10,9 @@
 	<dict>
 		<key>NAME</key>
 		<string>Kap</string>
+		<key>ARCH</key>
+		<string></string>
+		<!-- VALID arch FOR THIS RECIPE ARE: x64 (INTEL), arm64 (APPLE SILICON) -->
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,7 +24,7 @@
                 <key>github_repo</key>
                 <string>wulkano/kap</string>
 	            <key>asset_regex</key>
-                <string>(Kap-[0-9]+.[0-9]+.[0-9]+.dmg)</string>
+                <string>(Kap-[0-9]+.[0-9]+.[0-9]+-%ARCH%.dmg)</string>
             </dict>
                 <key>Processor</key>
                 <string>GitHubReleasesInfoProvider</string>
