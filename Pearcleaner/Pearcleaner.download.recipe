@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Pearcleaner</string>
+		<key>Identifier</key>
+		<string>com.github.autopkg.wardsparadox.download.pearcleaner</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Pearcleaner</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>2.3.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>github_repo</key>
+					<string>alienator88/Pearcleaner</string>
+					<key>asset_regex</key>
+					<string>Pearcleaner.zip</string>
+				</dict>
+				<key>Processor</key>
+				<string>GitHubReleasesInfoProvider</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>Unarchiver</string>
+				<key>Arguments</key>
+				<dict>
+					<key>archive_path</key>
+					<string>%pathname%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%RECIPE_CACHE_DIR%/Pearcleaner/Pearcleaner.app</string>
+					<key>requirement</key>
+					<string>anchor apple generic and identifier "com.alienator88.Pearcleaner" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BK8443AXLU)</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
