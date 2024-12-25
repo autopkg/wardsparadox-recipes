@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Kap - VALID arch FOR THIS RECIPE ARE: x64 (INTEL), arm64 (APPLE SILICON)</string>
+	<string>Downloads the latest version of Kap.
+	
+Valid ARCH values are:
+- x86_64 (default, Intel)
+- arm64 (Apple Silicon)</string>
 	<key>Identifier</key>
 	<string>com.github.autopkg.wardsparadox.download.Kap</string>
 	<key>Input</key>
@@ -11,19 +15,32 @@
 		<key>NAME</key>
 		<string>Kap</string>
 		<key>ARCH</key>
-		<string></string>
+		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_string</key>
+				<string>%ARCH%</string>
+				<key>find</key>
+				<string>x86_64</string>
+				<key>replace</key>
+				<string>x64</string>
+			</dict>
+		</dict>
+		<dict>
             <key>Arguments</key>
             <dict>
                 <key>github_repo</key>
                 <string>wulkano/kap</string>
 	            <key>asset_regex</key>
-                <string>(Kap-[0-9]+.[0-9]+.[0-9]+-%ARCH%.dmg)</string>
+                <string>(Kap-[\d\.]+-%output_string%.dmg)</string>
             </dict>
                 <key>Processor</key>
                 <string>GitHubReleasesInfoProvider</string>
