@@ -19,27 +19,7 @@
                     <string>testing</string>
                 </array>
                 <key>description</key>
-                <string>
-                    &lt;h1&gt;Vernier Spectral Analysis is a tool for science students to collect and analyze data from Vernier spectrophotometers.&lt;/h1&gt;
-
-
-                    &lt;p&gt;
-                    The Spectral Analysis app makes it easy to incorporate spectroscopy into your biology and chemistry labs. Using the app, students can collect a full spectrum and explore topics such as Beer's law, enzyme kinetics, and plant pigments.
-                    &lt;/p&gt;
-                    &lt;p&gt;
-                    The user-friendly interface walks the students through the data-collection process and includes analysis features such as curve fitting and data interpolation.
-                    &lt;/p&gt;
-                    &lt;h2&gt;Key Features&lt;/h2&gt;
-
-                    &lt;ul&gt;
-
-                    &lt;li&gt;Follow on-screen instructions for simplified Beer's law or kinetics data collection.
-                    &lt;li&gt;Collect full spectrum absorbance or % transmittance data in less than one second.
-                    &lt;li&gt;Analyze data with built-in analysis tools, including data interpolation and curve fittings.
-                    &lt;li&gt;Determine the order of kinetics reaction with the calculated columns function.
-                    &lt;li&gt;Understand color transmission using the color strip shown on full spectrum graphs.
-                    &lt;li&gt;View the full spectrum of your sample simultaneously with Beer's law or kinetic data collection.&lt;/li&gt;&lt;/ul&gt;
-                </string>
+                <string>Vernier Spectral Analysis is a tool for science students to collect and analyze data from Vernier spectrophotometers.</string>
                 <key>display_name</key>
                 <string>Vernier Spectral Analysis</string>
                 <key>name</key>
