@@ -73,28 +73,37 @@
     <key>MinimumVersion</key>
     <string>0.2.3</string>
     <key>ParentRecipe</key>
-    <string>com.github.wardsparadox.download.vernier.graphicalanalysis</string>
+    <string>com.github.nstrauss.download.VernierGraphicalAnalysis</string>
     <key>Process</key>
     <array>
-    	<dict>
-    		<key>Arguments</key>
-			<dict>
-				<key>split_on</key>
-				<string>-</string>
-				<key>version</key>
-				<string>%version%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
-		</dict>
-		<dict>
+        <dict>
             <key>Arguments</key>
             <dict>
-            	<key>additional_pkginfo</key>
-            	<dict>
-            		<key>version</key>
-            		<string>%version%</string>
-            	</dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+            </dict>
+            <key>Processor</key>
+            <string>AppDmgVersioner</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>split_on</key>
+                <string>-</string>
+                <key>version</key>
+                <string>%version%</string>
+            </dict>
+            <key>Processor</key>
+            <string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                    <key>version</key>
+                    <string>%version%</string>
+                </dict>
             </dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
