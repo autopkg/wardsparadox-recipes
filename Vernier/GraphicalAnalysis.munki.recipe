@@ -19,45 +19,7 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>&lt;h1&gt;Graphical Analysis 4 is a tool for science students to collect, graph, and analyze data from Vernier sensors.&lt;/h1&gt;
-
-&lt;h2&gt;Key Features&lt;/h2&gt;
-
-&lt;h3&gt;Data Collection&lt;/h3&gt;
-
-&lt;ul&gt;
-
-&lt;li&gt;Collect data from multiple sensors simultaneously, either with a multiple-channel interface such as LabQuest Stream or by using multiple Go Direct sensors. Use Data Sharing to retrieve data from just about every Vernier sensor.
-&lt;li&gt;Select time-based or event-based data collection, including events with entry.
-&lt;li&gt;Adjust data-collection rate and duration as needed.
-&lt;li&gt;Trigger time-based data collection on sensor values (iOS will not support triggering or change display units in the initial 4.0 release).
-&lt;li&gt;Calibrate sensors, although most of the time this is not needed.
-&lt;li&gt;Enter data manually or using the clipboard.
-&lt;li&gt;Change display units on many sensors.&lt;/li&gt;&lt;/ul&gt;
-
-&lt;h3&gt;Data Analysis&lt;/h3&gt;
-
-&lt;ul&gt;
-
-&lt;li&gt;Display one, two, or three graphs as needed.
-&lt;li&gt;Set the graph scale.
-&lt;li&gt;Select what is graphed on each axis, and select line- or point-style graphs.
-&lt;li&gt;Calculate descriptive statistics on all or some of your data.
-&lt;li&gt;Fit lines and curves to some or all of your data.
-&lt;li&gt;Define calculated columns based on sensor columns. Use this to linearize a graph, for example.
-&lt;li&gt;View data in a table.
-&lt;li&gt;Highlight and read values from a graph.
-&lt;li&gt;Interpolate and extrapolate using graphed data.&lt;/li&gt;&lt;/ul&gt;
-
-&lt;h3&gt;Data Sharing&lt;/h3&gt;
-
-&lt;ul&gt;
-
-&lt;li&gt;Receive data shared from LabQuest 2 or a computer running Logger Pro 3 to support 1:1 lab groups.&lt;/li&gt;&lt;/ul&gt;
-&lt;h3&gt;Data Storage&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Store and retrieve previously shared data collection and analysis sessions.
-&lt;li&gt;Save Graphical Analysis 4 data files with analysis for use in Logger Pro 3.&lt;/li&gt;&lt;/ul&gt;</string>
+            <string>Graphical Analysis 6 is a tool for science students to collect, graph, and analyze data from Vernier sensors.</string>
             <key>display_name</key>
             <string>Vernier Graphical Analysis</string>
             <key>name</key>
@@ -67,34 +29,43 @@
             <key>developer</key>
             <string>Vernier Software &amp; Technology, LLC.</string>
             <key>category</key>
-            <string>Sciencific Analysis</string>
+            <string>Scientific Analysis</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.3</string>
     <key>ParentRecipe</key>
-    <string>com.github.wardsparadox.download.vernier.graphicalanalysis</string>
+    <string>com.github.nstrauss.download.VernierGraphicalAnalysis</string>
     <key>Process</key>
     <array>
-    	<dict>
-    		<key>Arguments</key>
-			<dict>
-				<key>split_on</key>
-				<string>-</string>
-				<key>version</key>
-				<string>%version%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
-		</dict>
-		<dict>
+        <dict>
             <key>Arguments</key>
             <dict>
-            	<key>additional_pkginfo</key>
-            	<dict>
-            		<key>version</key>
-            		<string>%version%</string>
-            	</dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+            </dict>
+            <key>Processor</key>
+            <string>AppDmgVersioner</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>split_on</key>
+                <string>-</string>
+                <key>version</key>
+                <string>%version%</string>
+            </dict>
+            <key>Processor</key>
+            <string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                    <key>version</key>
+                    <string>%version%</string>
+                </dict>
             </dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
