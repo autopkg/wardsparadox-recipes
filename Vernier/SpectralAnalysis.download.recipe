@@ -10,39 +10,22 @@
     <dict>
       <key>NAME</key>
       <string>vernierspectralanalysis</string>
-      <key>CHECK_PAGE_URL</key>
-      <string>https://www.vernier.com/products/software/spectral-analysis/</string>
-      <key>CHECK_PAGE_PATTERN</key>
-      <string>(?P&lt;url&gt;https://software-releases.graphicalanalysis.com/sa/mac/release/Vernier-Spectral-Analysis-(?P&lt;version&gt;[\d.-]+)\.dmg)</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://software-releases.graphicalanalysis.com/sa/mac/release/latest/Vernier-Spectral-Analysis.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
     <key>Process</key>
     <array>
-    <dict>
-      <key>Processor</key>
-      <string>URLTextSearcher</string>
-      <key>Arguments</key>
       <dict>
-        <key>url</key>
-        <string>%CHECK_PAGE_URL%</string>
-        <key>re_pattern</key>
-        <string>%CHECK_PAGE_PATTERN%</string>
-        <key>re_flags</key>
-        <array>
-          <string>IGNORECASE</string>
-        </array>
-      </dict>
-    </dict>
-     <dict>
          <key>Processor</key>
          <string>URLDownloader</string>
          <key>Arguments</key>
          <dict>
             <key>filename</key>
-            <string>%NAME%-%version%.dmg</string>
+            <string>%NAME%.dmg</string>
             <key>url</key>
-            <string>%url%</string>
+            <string>%DOWNLOAD_URL%</string>
          </dict>
       </dict>
       <dict>
