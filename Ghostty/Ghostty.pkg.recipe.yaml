@@ -1,0 +1,15 @@
+Identifier: com.github.autopkg.wardsparadox.pkg.Ghostty
+Description: A recipe to package https://github.com/ghostty-org/ghostty/
+ParentRecipe: com.github.autopkg.wardsparadox.download.Ghostty
+MinimumVersion: "2.3"
+
+Input:
+  # Unarchiver requires NAME to be defined
+  NAME: Ghostty.app
+
+Process:
+  - Processor: AppPkgCreator
+    Arguments:
+      app_path: "%target%/Ghostty.app"
+      destination_path: "/Applications/Ghostty.app"
+      overwrite: true

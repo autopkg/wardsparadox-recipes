@@ -1,37 +1,29 @@
-Identifier: com.github.discentem.download.Ghostty
+Identifier: com.github.autopkg.wardsparadox.download.Ghostty
 Description: Downloads the latest version of Ghostty.
-Comment: "Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)"
+Comment: Originally created by @discentem, ownership transferred
 
 Input:
   NAME: Ghostty
-MinimumVersion: '2.3'
+MinimumVersion: "2.3"
 Process:
   - Processor: URLTextSearcher
     Arguments:
       url: https://ghostty.org/download
       re_pattern: 'https:\/\/release\.files\.ghostty\.org\/\d+\.\d+\.\d+\/Ghostty\.dmg'
-
   - Processor: EndOfCheckPhase
-  
   - Processor: URLDownloader
     Arguments:
-      url: '%match%'
-
-  - Processor: FileFinder
-    Arguments:
-      pattern: '%RECIPE_CACHE_DIR%/downloads/*.dmg'
-  
+      url: "%match%"
   - Processor: CodeSignatureVerifier
     Arguments:
-      input_path: '%found_filename%/Ghostty.app'
+      input_path: "%pathname%/Ghostty.app"
       requirement: 'identifier "com.mitchellh.ghostty" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "24VZTF6M5V"'
-  
   - Processor: Versioner
     Arguments:
-      input_plist_path: '%found_filename%/Ghostty.app/Contents/Info.plist'
+      input_plist_path: "%pathname%/Ghostty.app/Contents/Info.plist"
       plist_version_key: CFBundleShortVersionString
 
-  - Processor: Copier
+  - Processor: FileMover
     Arguments:
-      source_path: '%found_filename%'
-      destination_path: '%RECIPE_CACHE_DIR%/Ghostty-%version%.dmg'
+      source: "%pathname%"
+      target: "%RECIPE_CACHE_DIR%/Ghostty-%version%.dmg"
