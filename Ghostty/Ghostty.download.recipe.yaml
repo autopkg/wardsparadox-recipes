@@ -22,8 +22,7 @@ Process:
     Arguments:
       input_plist_path: "%pathname%/Ghostty.app/Contents/Info.plist"
       plist_version_key: CFBundleShortVersionString
-
-  - Processor: FileMover
+  - Processor: Copier
     Arguments:
-      source: "%pathname%"
-      target: "%RECIPE_CACHE_DIR%/Ghostty-%version%.dmg"
+      source_path: "%pathname%"
+      destination_path: "%RECIPE_CACHE_DIR%/Ghostty-%version%.dmg"

@@ -10,6 +10,6 @@ Input:
 Process:
   - Processor: AppPkgCreator
     Arguments:
-      app_path: "%target%/Ghostty.app"
+      app_path: "%pathname%/Ghostty.app"
       destination_path: "/Applications/Ghostty.app"
       overwrite: true
