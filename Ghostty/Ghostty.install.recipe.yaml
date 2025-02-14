@@ -9,6 +9,6 @@ Input:
 Process:
   - Processor: Copier
     Arguments:
-      source_path: "%found_filename%/Ghostty.app"
+      source_path: "%pathname%/Ghostty.app"
       destination_path: "/Applications/Ghostty.app"
       overwrite: true
