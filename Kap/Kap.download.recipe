@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of Kap.
-	
+
 Valid ARCH values are:
 - x86_64 (default, Intel)
 - arm64 (Apple Silicon)</string>
