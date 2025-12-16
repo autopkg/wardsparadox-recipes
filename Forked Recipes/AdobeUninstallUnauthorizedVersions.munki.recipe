@@ -14,23 +14,20 @@
             <string>apps/Adobe</string>
             <key>pkginfo</key>
             <dict>
-                <key>pkginfo</key>
-                <dict>
-                    <key>catalogs</key>
-                    <array>
-                        <string>testing</string>
-                    </array>
-                    <key>category</key>
-                    <string>Uninstallers</string>
-                    <key>description</key>
-                    <string>A package of the Adobe Unauthorized Versions Uninstaller tool that will remove all Unauthorized Versions per Adobe.</string>
-                    <key>developer</key>
-                    <string>Adobe</string>
-                    <key>display_name</key>
-                    <string>Adobe Unauthorized Version Removal Tool</string>
-                    <key>name</key>
-                    <string>%NAME%</string>
-                </dict>
+                <key>catalogs</key>
+                <array>
+                    <string>testing</string>
+                </array>
+                <key>category</key>
+                <string>Uninstallers</string>
+                <key>description</key>
+                <string>A package of the Adobe Unauthorized Versions Uninstaller tool that will remove all Unauthorized Versions per Adobe.</string>
+                <key>developer</key>
+                <string>Adobe</string>
+                <key>display_name</key>
+                <string>Adobe Unauthorized Version Removal Tool</string>
+                <key>name</key>
+                <string>%NAME%</string>
             </dict>
         </dict>
         <key>MinimumVersion</key>
