@@ -7,8 +7,9 @@ Input:
   NAME: Ghostty.app
 
 Process:
-  - Processor: Copier
+  - Processor: InstallFromDMG
     Arguments:
-      source_path: "%pathname%/Ghostty.app"
-      destination_path: "/Applications/Ghostty.app"
-      overwrite: true
+      dmg_path: "%pathname%"
+      items_to_copy:
+        - source_item: Ghostty.app
+          destination_path: "/Applications"

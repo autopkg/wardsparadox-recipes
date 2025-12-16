@@ -10,10 +10,10 @@ Process:
     Arguments:
       url: https://ghostty.org/download
       re_pattern: 'https:\/\/release\.files\.ghostty\.org\/\d+\.\d+\.\d+\/Ghostty\.dmg'
-  - Processor: EndOfCheckPhase
   - Processor: URLDownloader
     Arguments:
       url: "%match%"
+  - Processor: EndOfCheckPhase
   - Processor: CodeSignatureVerifier
     Arguments:
       input_path: "%pathname%/Ghostty.app"
