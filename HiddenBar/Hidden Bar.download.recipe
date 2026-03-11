@@ -30,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -40,12 +40,16 @@
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Hidden Bar.app</string>
+				<string>%RECIPE_CACHE_DIR%/Hidden Bar/Hidden Bar.app</string>
 				<key>requirement</key>
-				<string>identifier "com.dwarvesv.minimalbar" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Trung Phan (C6D3FZBJNC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+				<string>identifier "com.dwarvesv.minimalbar" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = W777S7V8TN)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
