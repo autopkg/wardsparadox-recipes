@@ -23,8 +23,8 @@
 		</string>
 		<key>Identifier</key>
 		<string>com.github.wardsparadox.Office2019SuiteSKUless-additionalpkginfo.munki</string>
-		<key>ParentRecipe</key>
-		<string>com.github.autopkg.office-recipes.download.Office2019Suite</string>
+		<!-- <key>ParentRecipe</key> -->
+		<!-- <string>com.github.autopkg.office-recipes.download.Office2019Suite</string> -->
 		<key>Input</key>
 		<dict>
 			<key>pkg_ids_set_optional_true</key>
@@ -99,10 +99,10 @@
 			</dict>
 		</dict>
 		<key>MinimumVersion</key>
-		<string>0.4.1</string>
+		<string>1.1</string>
 		<key>Process</key>
 		<array>
-			<dict>
+			<!-- <dict>
 				<key>Processor</key>
 				<string>FlatPkgUnpacker</string>
 				<key>Arguments</key>
@@ -159,6 +159,15 @@
 			<dict>
 				<key>Processor</key>
 				<string>com.github.keeleysam.recipes.GoogleTalkPlugin/MunkiPkginfoReceiptsEditor</string>
+			</dict> -->
+			<dict>
+				<key>Processor</key>
+				<string>DeprecationWarning</string>
+				<key>Arguments</key>
+				<dict>
+					<key>warning_message</key>
+					<string>Not sure if anyone is using this anymore, but the parent recipe is gone. Move to a different recipe.</string>
+				</dict>
 			</dict>
 		</array>
 	</dict>
