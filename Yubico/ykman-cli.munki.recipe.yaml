@@ -1,0 +1,20 @@
+Identifier: com.github.autopkg.wardsparadox.munki.ykman-cli
+Description: "Downloads the latest version of ykman-cli and imports it into Munki."
+Input:
+  MUNKI_REPO_SUBDIR: "utilities/yubico/%NAME%"
+  NAME: ykman-cli
+  pkginfo:
+    catalogs:
+      - testing
+    description: Command line tool for configuring a YubiKey..
+    developer: Yubico
+    display_name: ykman-cli
+    name: "%NAME%"
+    unattended_install: true
+MinimumVersion: "2.3"
+ParentRecipe: com.github.autopkg.wardsparadox.download.ykman-cli
+Process:
+  - Processor: MunkiImporter
+    Arguments:
+      pkg_path: "%pathname%"
+      repo_subdirectory: "%MUNKI_REPO_SUBDIR%"
