@@ -1,0 +1,21 @@
+Identifier: com.github.autopkg.wardsparadox.download.ykman-cli
+Description: Downloads the latest version of ykman-cli.
+Input:
+  NAME: ykman-cli
+MinimumVersion: "2.3"
+Process:
+  - Processor: GitHubReleasesInfoProvider
+    Arguments:
+      github_repo: Yubico/yubikey-manager
+      asset_regex: yubikey-manager-.*-mac\.pkg
+  - Processor: URLDownloader
+    Arguments:
+      filename: ykman-cli.pkg
+  - Processor: EndOfCheckPhase
+  - Processor: CodeSignatureVerifier
+    Arguments:
+      input_path: "%pathname%"
+      expected_authority_names:
+        - "Developer ID Installer: Yubico Limited (LQA3CS5MM7)"
+        - "Developer ID Certification Authority"
+        - "Apple Root CA"
