@@ -20,6 +20,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>^Hidden-Bar-v.*-macos\.zip$</string>
 				<key>github_repo</key>
 				<string>dwarvesf/hidden</string>
 			</dict>
